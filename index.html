@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loja de Diamantes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Loja de Diamantes</h1>
+
+    <label for="game">Selecione o jogo:</label>
+    <select id="game" onchange="updateDiamonds()">
+      <option value="Free Fire">Free Fire</option>
+      <option value="PUBG">PUBG</option>
+      <option value="Mobile Legends">Mobile Legends</option>
+    </select>
+
+    <label for="playerId">ID do jogador:</label>
+    <input type="text" id="playerId" placeholder="Digite seu ID" />
+
+    <label for="diamonds">Quantidade de diamantes:</label>
+    <select id="diamonds" onchange="updatePrice()"></select>
+
+    <p id="price">Valor: R$ 0,00</p>
+
+    <button onclick="showPix()">Pagar com PIX</button>
+
+    <div id="pixArea" class="hidden">
+      <h2>Pagamento PIX</h2>
+      <img src="pix.png" alt="QR Code PIX" class="qrcode"/>
+      <p>Chave PIX: <span id="pixKey">chavepix@seudominio.com</span></p>
+      <button onclick="copyPix()">Copiar chave PIX</button>
+      <p class="success">Após o pagamento, envie o comprovante pelo WhatsApp.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
